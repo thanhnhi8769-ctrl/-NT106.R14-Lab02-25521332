@@ -1,179 +1,168 @@
 # 🚀 LAB 02 — WINFORMS & DATA PROCESSING SUITE
 
-![C# .NET](https://img.shields.io/badge/Language-C%23_8.0-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
-![Framework](https://img.shields.io/badge/Framework-.NET_Framework_4.8_/_8.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
-![Database](https://img.shields.io/badge/Database-SQLite_3-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
-![IDE](https://img.shields.io/badge/IDE-Visual_Studio_2022-5C2D91?style=for-the-badge&logo=visual-studio&logoColor=white)
-![Format](https://img.shields.io/badge/Solution-.SLNX_Format-FF6F00?style=for-the-badge)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen.svg)
+![C# .NET](https://img.shields.io/badge/C%23-.NET%20Framework-blue.svg)
+![Visual Studio 2022](https://img.shields.io/badge/VS%202022-.slnx-purple.svg)
 
 > [!IMPORTANT]
-> **Tóm tắt dự án:** Hệ thống WinForms đa phân hệ **Lab02** giải quyết trọn vẹn các bài toán xử lý I/O tập tin, thuật toán Dual-Stack, quản lý cấu trúc JSON/SQLite, giao diện Frameless tùy biến phong cách **Neon Cyberpunk Glassmorphism** kết hợp hiệu ứng GIF động, cùng công cụ phân tích thống kê báo cáo nâng cao bằng **LINQ**.
+> **TỔNG QUAN DỰ ÁN**
+> 
+> **Lab02** là bộ giải pháp phần mềm WinForms đa phân hệ trên nền tảng .NET Framework (Visual Studio 2022 solution `.slnx`). Dự án giải quyết trọn vẹn các bài toán xử lý I/O tập tin văn bản, thuật toán **Dual-Stack** tính toán biểu thức, đóng gói dữ liệu **JSON/SQLite**, giao diện **Frameless Cyberpunk Neon** tích hợp Win32 API & hiệu ứng GIF động, cùng hệ thống báo cáo thống kê chuyên sâu bằng **LINQ**.
 
 ---
-
-## 📸 1. HÌNH ẢNH & GIAO DIỆN DEMO (MEDIA & PREVIEWS)
-
-| 🎬 Giao Diện Chọn Phim & Link Quản Lý | 🎟️ Sơ Đồ Đặt Vé & Ma Trận Ghế |
-| :---: | :---: |
-| ![Select Movie Form](./Resources/cinema1.gif) | ![Booking Matrix Form](./Resources/cinema2.gif) |
 
 > [!TIP]
-> **Điểm nhấn thiết kế:** Giao diện Form `Bai05` áp dụng phong cách Tím Neon Cyberpunk kết hợp hiệu ứng ảnh GIF động (Cuộn phim & Bỏng ngô) được nạp trực tiếp qua `FrameDimension` & cơ chế `DoubleBuffered` chống xé hình, mang lại trải nghiệm như ứng dụng xem phim thương mại.
+> **✨ ĐIỂM SÁNG NỔI BẬT & ĐIỂM MẠNH KỸ THUẬT**
+>
+> 1. **🎨 Thiết kế Giao diện Custom (Frameless & Win32 Interop):** 
+>    * Loại bỏ hoàn toàn thanh tiêu đề chuẩn của Windows, tự thiết kế nút bấm `[ - ]`, `[ ▢ ]`, `[ X ]`.
+>    * Tích hợp trực tiếp thư viện Win32 API `user32.dll` (`ReleaseCapture` & `SendMessage` với `WM_NCLBUTTONDOWN = 0xA1`) giúp nhấp giữ di chuyển Form mượt mà.
+>    * Hiệu ứng hình ảnh GIF động (Cuộn phim & Bỏng ngô) được render qua `FrameDimension` kết hợp cơ chế `DoubleBuffered` chống xé hình.
+>
+> 2. **🧮 Động cơ Thuật toán Dual-Stack (Bài 03):**
+>    * Phân tích cú pháp và xử lý tập tin chứa các biểu thức toán học phức tạp đa dòng.
+>    * Hỗ trợ đầy đủ toán tử `+`, `-`, `*`, `/`, dấu ngoặc `()` và xử lý thông minh tiền tố số âm dạng `(-X)`.
+>
+> 3. **📋 Chuẩn hóa Dữ liệu JSON & Regex Validation (Bài 04):**
+>    * Mã hóa/giải mã cấu trúc dữ liệu sinh viên bằng engine `System.Text.Json`.
+>    * Kiểm soát dữ liệu nghiêm ngặt bằng Biểu thức chính quy:
+>      * 🆔 **MSSV:** Đúng 8 chữ số (`@"^\d{8}$"`).
+>      * 📞 **SĐT:** Đúng 10 chữ số, bắt đầu bằng số 0 (`@"^0\d{9}$"`).
+>
+> 4. **🎟️ Đặt Vé Rạp Phim & Báo Cáo LINQ (Bài 05):**
+>    * Ma trận ghế tương tác 3 trạng thái màu (Trống / Đang chọn / Đã bán).
+>    * Công thức tính giá vé tự động:
+>      * 🟡 **Vé Biên (A1, A5, B1, B5, C1, C5):** $50\%$ giá vé chuẩn ($40.000$ VNĐ).
+>      * 🔴 **Vé VIP (B2, B3, B4):** $200\%$ giá vé chuẩn ($160.000$ VNĐ).
+>      * 🔵 **Vé Thường (Vị trí còn lại):** $100\%$ giá vé chuẩn ($80.000$ VNĐ).
+>    * Công cụ thống kê **LINQ Analytics** gom nhóm (`GroupBy`) tính tỷ lệ lấp đầy %, tổng doanh thu và xếp hạng phim.
+>
+> 5. **🍜 CSDL Quan Hệ SQLite & Query Ngẫu Nhiên (Bài 06):**
+>    * Thiết kế mô hình CSDL quan hệ với khóa ngoại `Foreign Key` giữa 2 bảng `MonAn` và `NguoiDung`.
+>    * Truy vấn gợi ý món ăn ngẫu nhiên trực tiếp bằng `ORDER BY RANDOM() LIMIT 1`.
+>
+> 6. **📂 File Explorer TreeView với Lazy Loading (Bài 07):**
+>    * Duyệt cấu trúc thư mục đĩa cứng tối ưu RAM nhờ kỹ thuật **Lazy Loading** (dùng gút giả `"dummy"` để chỉ tải thư mục con khi mở rộng nút).
 
 ---
 
-## ✨ 2. TÍNH NĂNG NỔI BẬT & ĐIỂM MẠNH KỸ THUẬT
-
-### 🎨 1. Thiết Kế Giao Diện Tùy Biến (Frameless & Win32 Interop)
-* **Khung viền tùy biến:** Loại bỏ hoàn toàn thanh tiêu đề Windows mặc định, tự thiết kế cụm nút điều khiển `[ - ]` (`btnMinimize`), `[ ▢ ]` (`btnMaximize`), `[ X ]` (`btnClose`).
-* **Kéo thả di chuyển Form:** Nhúng trực tiếp Win32 API từ `user32.dll` (`ReleaseCapture` và `SendMessage` với tham số `WM_NCLBUTTONDOWN = 0xA1`) cho phép bấm giữ và di chuyển Form ở bất kỳ vị trí trống nào trên giao diện.
-
-### 🧮 2. Động Cơ Thuật Toán Dual-Stack (Bài 03)
-* Phân tích và xử lý chuỗi biểu thức toán học đa dòng từ tập tin văn bản.
-* Hỗ trợ đầy đủ các toán tử `+`, `-`, `*`, `/`, dấu ngoặc đơn `()` và xử lý thông minh tiền tố số âm dạng `(-X)`.
-
-### 📋 3. Chuẩn Hóa Dữ Liệu JSON & Regex Validation (Bài 04)
-* Đóng gói và giải đóng gói chuỗi dữ liệu phức tạp bằng engine `System.Text.Json`.
-* Ràng buộc dữ liệu đầu vào nghiêm ngặt bằng Biểu thức chính quy (Regex):
-  * 🆔 **MSSV:** Bắt buộc đúng 8 chữ số (`@"^\d{8}$"`).
-  * 📞 **Số điện thoại:** Bắt buộc đúng 10 chữ số và bắt đầu bằng số 0 (`@"^0\d{9}$"`).
-
-### 🎟️ 4. Hệ Thống Đặt Vé Rạp Phim & Báo Cáo LINQ (Bài 05)
-* **Sơ đồ ghế tương tác thời gian thực:** Tự động tạo ma trận ghế với 3 trạng thái màu phân biệt.
-* **Công thức phân hạng giá vé:**
-  * 🟡 **Vé Biên (A1, A5, B1, B5, C1, C5):** $50\%$ giá vé chuẩn ($40.000$ VNĐ).
-  * 🔴 **Vé VIP (B2, B3, B4):** $200\%$ giá vé chuẩn ($160.000$ VNĐ).
-  * 🔵 **Vé Thường (Các vị trí còn lại):** $100\%$ giá vé chuẩn ($80.000$ VNĐ).
-* **Báo cáo LINQ Analytics:** Gom nhóm (`GroupBy`), tính tỷ lệ lấp đầy phòng chiếu (%), tổng doanh thu và xếp hạng phim bán chạy nhất.
-
-### 🍜 5. Quản Lý CSDL Quan Hệ SQLite & Random Query (Bài 06)
-* Thiết kế mô hình CSDL quan hệ chuẩn hóa với khóa ngoại (`Foreign Key`) nối giữa bảng `MonAn` và `NguoiDung`.
-* Thuật toán gợi ý món ăn ngẫu nhiên thực thi trực tiếp dưới CSDL bằng câu lệnh `ORDER BY RANDOM() LIMIT 1`.
-
-### 📂 6. File Explorer TreeView với Lazy Loading (Bài 07)
-* Duyệt cấu trúc cây thư mục hệ thống tối ưu bộ nhớ RAM nhờ kỹ thuật **Lazy Loading** (Sử dụng gút giả `"dummy"` để chỉ nạp danh sách thư mục con khi người dùng nhấp mở rộng nút).
-
----
-
-## 📖 3. BẢNG TRA CỨU CHI TIẾT DỮ LIỆU & HƯỚNG DẪN THAO TÁC CÁC FORM
+## 📖 BẢNG TRA CỨU CHI TIẾT CONTROL & HƯỚNG DẪN THAO TÁC CÁC FORM
 
 ### 🎛️ DashBoard — Màn Hình Điều Hướng Trung Tâm
-* **Thao tác:** Bấm vào các nút bài tập tương ứng từ `Bài 1` đến `Bài 7` trên Menu điều hướng.
+> **Thao tác:** Nhấp chuột vào các nút từ `Bài 1` đến `Bài 7` trên Menu để truy cập trực tiếp Form chức năng.
 
 ---
 
 ### 📝 Bai01 — Đọc, Mã Hóa & Ghi Tập Tin Văn Bản
-* **Thao tác:** Bấm **Đọc File** để đọc `input1.txt` ➔ Sửa đổi văn bản trên khung ➔ Bấm **Ghi File** để viết HOA toàn bộ nội dung và xuất ra `output1.txt`.
+> **Thao tác:** Bấm **Đọc File** để nạp `input1.txt` ➔ Sửa nội dung trên khung ➔ Bấm **Ghi File** để chuyển toàn bộ ký tự sang IN HOA và lưu ra `output1.txt`.
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
 | :--- | :--- | :--- |
-| `rtbNoiDung` | `RichTextBox` | Hiển thị nội dung đọc được hoặc nhận chuỗi nhập văn bản từ bàn phím. |
+| `rtbNoiDung` | `RichTextBox` | Hiển thị nội dung đọc được hoặc nhận văn bản nhập từ bàn phím. |
 | `btnDocFile` | `Button` | Tìm tệp `input1.txt` theo 3 cấp ưu tiên (Bin ➔ Project ➔ `OpenFileDialog`). |
-| `btnGhiFile` | `Button` | Kích hoạt phương thức `.ToUpper()` toàn bộ văn bản và lưu vào `output1.txt`. |
+| `btnGhiFile` | `Button` | Thực thi phương thức `.ToUpper()` và ghi tập tin `output1.txt`. |
 
 ---
 
 ### 🔍 Bai02 — Phân Tích Thuộc Tính Tệp & Thống Kê Văn Bản
-* **Thao tác:** Bấm **Read File** chọn tệp `.txt` bất kỳ ➔ Hệ thống tự động điền các thông số đường dẫn, dung lượng và chỉ số đếm.
+> **Thao tác:** Bấm **Read File** chọn tệp `.txt` ➔ Hệ thống tự động trích xuất các thuộc tính đường dẫn, dung lượng và chỉ số đếm.
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
 | :--- | :--- | :--- |
-| `btnRead` | `Button` | Mở `OpenFileDialog` lọc các tệp tin đuôi `.txt`. |
-| `rtbContent` | `RichTextBox` | Khung hiển thị toàn bộ nội dung tệp văn bản. |
+| `btnRead` | `Button` | Mở `OpenFileDialog` với bộ lọc `.txt`. |
+| `rtbContent` | `RichTextBox` | Khung xem toàn văn nội dung tệp. |
 | `txtFileName` | `TextBox` | Tên tệp tin ngắn gọn (`SafeFileName`). |
-| `txtURL` | `TextBox` | Đường dẫn tuyệt đối của tệp tin trên hệ thống đĩa cứng. |
-| `txtSize` | `TextBox` | Dung lượng tệp tính chính xác theo đơn vị **Bytes** (`FileInfo.Length`). |
+| `txtURL` | `TextBox` | Đường dẫn tuyệt đối của tệp tin trên đĩa cứng. |
+| `txtSize` | `TextBox` | Dung lượng tính chính xác theo đơn vị **Bytes** (`FileInfo.Length`). |
 | `txtCharCount` | `TextBox` | Tổng số lượng ký tự có trong văn bản. |
-| `txtLineCount` | `TextBox` | Tổng số dòng thu được sau khi tách chuỗi `\r\n`. |
-| `txtWordCount` | `TextBox` | Số lượng từ được tách chính xác bằng Regex `@"\b\w+\b"`. |
+| `txtLineCount` | `TextBox` | Tổng số dòng sau khi tách chuỗi `\r\n`. |
+| `txtWordCount` | `TextBox` | Đếm số từ chính xác bằng Biểu thức chính quy Regex `@"\b\w+\b"`. |
 
 ---
 
 ### 🧮 Bai03 — Thuật Toán Dual-Stack Giải Biểu Thức Toán Học
-* **Thao tác:** Bấm **Đọc File** ➔ Bấm **Tính Toán** để giải biểu thức ➔ Bấm **Lưu File** để ghi kết quả (chỉ mở khóa nút lưu khi tất cả các dòng đều đúng cú pháp).
+> **Thao tác:** Bấm **Đọc File** ➔ Bấm **Tính Toán** để giải ➔ Bấm **Lưu File** để xuất kết quả (Chỉ mở khóa nút lưu khi 100% biểu thức hợp lệ).
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
 | :--- | :--- | :--- |
-| `rtbRead` | `RichTextBox` | Hiển thị chuỗi biểu thức đầu vào. |
-| `btnCal` | `Button` | Thực thi thuật toán 2 Stack (OpStack & ValStack) tính toán theo đúng độ ưu tiên toán tử. |
-| `rtbCal` | `RichTextBox` | Xuất danh sách kết quả dạng `[Biểu thức] = [Kết quả]`. |
-| `btnSave` | `Button` | Xuất tập tin văn bản mã hóa `UTF-8` qua `FileStream`. |
+| `rtbRead` | `RichTextBox` | Hiển thị danh sách biểu thức đầu vào. |
+| `btnCal` | `Button` | Thực thi thuật toán 2 Stack (OpStack & ValStack) tính toán theo độ ưu tiên toán tử. |
+| `rtbCal` | `RichTextBox` | Hiển thị danh sách kết quả dạng `[Biểu thức] = [Kết quả]`. |
+| `btnSave` | `Button` | Xuất file văn bản mã hóa `UTF-8` bằng `FileStream`. |
 
 ---
 
-### 📋 Bai04 — Quản Lý Sinh Viên JSON & Phân Trang
-* **Thao tác:** Nhập dữ liệu bên trái ➔ Bấm **Thêm** ➔ Bấm **Lưu File** để đóng gói JSON ra `input4.txt`. Bấm **Đọc File** để đọc `input4.txt`, tính ĐTB và lưu `output4.txt`. Bấm **Next** / **Back** để chuyển trang.
+### 📋 Bai04 — Quản Lý Sinh Viên JSON & Điều Hướng Phân Trang
+> **Thao tác:** Nhập dữ liệu bên trái ➔ Bấm **Thêm** ➔ Bấm **Lưu File** để đóng gói JSON ra `input4.txt`. Bấm **Đọc File** để tính ĐTB và xuất `output4.txt`. Bấm **Next** / **Back** để phân trang.
 
 | Control Name | Loại Control | Quy chuẩn Dữ liệu & Ràng buộc (Validation) |
 | :--- | :--- | :--- |
-| `txtName` / `txtNameRead` | `TextBox` | Họ và tên sinh viên (Không được để trống). |
+| `txtName` / `txtNameRead` | `TextBox` | Họ và tên sinh viên (Bắt buộc nhập). |
 | `txtID` / `txtIDRead` | `TextBox` | Mã số sinh viên (**Regex: Đúng 8 chữ số**). |
 | `txtPhone` / `txtPhoneRead` | `TextBox` | Số điện thoại (**Regex: Đúng 10 chữ số, bắt đầu bằng 0**). |
 | `txtCourse1..3` | `TextBox` | Điểm 3 học phần (Số thực từ `0.0` đến `10.0`). |
 | `txtAverageRead` | `TextBox` | Điểm trung bình tự động: $\text{ĐTB} = \frac{\text{Điểm}_1 + \text{Điểm}_2 + \text{Điểm}_3}{3}$. |
-| `btnWriteFile` | `Button` | Serialized danh sách sinh viên sang JSON và lưu vào `input4.txt`. |
-| `btnReadFile` | `Button` | Deserialized file `input4.txt`, tính ĐTB và xuất kết quả ra `output4.txt`. |
-| `btnNext` / `btnBack` | `Button` | Tăng/giảm chỉ số trang `currentIndex` để xem chi tiết từng sinh viên. |
+| `btnWriteFile` | `Button` | Tuần tự hóa danh sách sang JSON và lưu `input4.txt`. |
+| `btnReadFile` | `Button` | Giải tuần tự hóa JSON `input4.txt`, tính ĐTB và xuất `output4.txt`. |
+| `btnNext` / `btnBack` | `Button` | Điều hướng con trỏ `currentIndex` để chuyển trang xem chi tiết. |
 
 ---
 
-### 🎟️ Bai05 — Hệ Thống Đặt Vé Rạp Phim & Quản Lý Hệ Thống LINQ
+### 🎟️ Bai05 — Hệ Thống Đặt Vé Rạp Phim & Báo Cáo Doanh Thu LINQ
 
 > [!NOTE]
-> **Quy trình thao tác:**
-> 1. **Khách đặt vé:** Nhập tên vào `Customer Name` ➔ Bấm chọn Poster phim (hoặc dùng phím `Tab`/`Enter`) ➔ Mở Form `BookingForm` ➔ Chọn phòng chiếu ➔ Click chọn các vị trí ghế trên ma trận ➔ Bấm **Thanh toán**.
-> 2. **Chế độ Quản trị:** Tại góc dưới cùng bên phải Form chọn phim, bấm trực tiếp vào link **`⚙ Quản lý hệ thống`** ➔ Mở Form `PasswordForm` ➔ Nhập mật khẩu `admin123` ➔ Mở Form `AdminForm` ➔ Bấm **Thống kê** để xem báo cáo LINQ và bấm **Lưu** để xuất `output5.txt`.
-
-#### Bảng Tra Cứu Các Trường Control Chi Tiết:
+> **QUY TRÌNH THAO TÁC CÁC PHÂN HỆ:**
+>
+> 1. **Khách đặt vé:** Nhập tên vào `Customer Name` ➔ Click chọn Poster phim ➔ Mở Form `BookingForm` ➔ Chọn phòng chiếu ➔ Click chọn ghế ➔ Bấm **Thanh toán**.
+> 2. **Chế độ Quản trị:** Tại góc dưới cùng bên phải Form chọn phim, bấm trực tiếp vào link **`⚙ Quản lý hệ thống`** ➔ Mở Form `PasswordForm` ➔ Nhập mật khẩu `admin123` ➔ Mở Form `AdminForm` ➔ Bấm **Thống kê** xem báo cáo LINQ ➔ Bấm **Lưu** xuất `output5.txt`.
 
 | Form | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
 | :--- | :--- | :--- | :--- |
 | **`Bai05`** | `txtTenKhachHang` | `TextBox` | Ô nhập tên khách hàng (`Customer Name`). |
-| **`Bai05`** | `picDaoPhoPiano`, `picMai`, `picGapLaiChiBau`, `picTarot` | `PictureBox` | Danh sách Poster 4 phim chiếu rạp. Click chọn hoặc di chuyển Tab/Enter để chọn phim. |
-| **`Bai05`** | `lblQuanLyHeThong` | `LinkLabel` | **[LINK GÓC DƯỚI BÊN PHẢI]** Bấm vào link **`⚙ Quản lý hệ thống`** để mở cửa sổ xác thực quản trị. |
-| **`BookingForm`**| `cbPhongChieu` | `ComboBox` | Chọn phòng chiếu (Rạp 1, Rạp 2, Rạp 3). Tự động cập nhật ma trận ghế tương ứng. |
-| **`BookingForm`**| `pnlGhe` (*Matrix*) | `Panel` / `Button` | Ma trận 15 ghế tương tác: **Xám** (Trống), **Xanh lá** (Đang chọn), **Đỏ** (Đã bán/Khóa). |
-| **`BookingForm`**| `lblTinhTien` | `Label` | Tự động tính tổng tiền theo hệ số loại vé (Vé biên $50\%$, VIP $200\%$, Thường $100\%$). |
-| **`BookingForm`**| `btnThanhToan` | `Button` | In hóa đơn, lưu vết giao dịch vào `input5.txt` và ghi nhận vị trí ghế vào `booked_seats5.txt`. |
-| **`PasswordForm`**| `txtPassword` | `TextBox` | Ô nhập mật khẩu truy cập hệ thống quản lý (Mật khẩu mặc định: `admin123`). |
-| **`AdminForm`** | `btnXuatThongKe` | `Button` | Thực thi các truy vấn **LINQ** `GroupBy` phân tích tổng số vé bán, vé tồn, tỷ lệ lấp đầy % và doanh thu. |
-| **`AdminForm`** | `btnLuu` | `Button` | Ghi bảng tổng hợp doanh thu chi tiết ra file `output5.txt`. |
+| **`Bai05`** | `picDaoPhoPiano`, `picMai`, `picGapLaiChiBau`, `picTarot` | `PictureBox` | Poster 4 phim. Click chuột hoặc dùng phím Tab/Enter để chọn. |
+| **`Bai05`** | `lblQuanLyHeThong` | `LinkLabel` | **[LINK GÓC DƯỚI BÊN PHẢI]** Link **`⚙ Quản lý hệ thống`** mở cửa sổ xác thực. |
+| **`BookingForm`** | `cbPhongChieu` | `ComboBox` | Chọn phòng chiếu (Rạp 1, 2, 3) để cập nhật ma trận ghế tương ứng. |
+| **`BookingForm`** | `pnlGhe` (*Matrix*) | `Panel` / `Button` | Ma trận 15 ghế: **Xám** (Trống), **Xanh lá** (Đang chọn), **Đỏ** (Đã bán). |
+| **`BookingForm`** | `lblTinhTien` | `Label` | Tự động tính tiền theo hệ số loại vé ($50\%$, $100\%$, $200\%$). |
+| **`BookingForm`** | `btnThanhToan` | `Button` | In hóa đơn, lưu lịch sử vào `input5.txt` và ghi vết ghế vào `booked_seats5.txt`. |
+| **`PasswordForm`**| `txtPassword` | `TextBox` | Ô nhập mật khẩu xác thực quản trị (`admin123`). |
+| **`AdminForm`** | `btnXuatThongKe` | `Button` | Thực thi **LINQ** `GroupBy` phân tích vé bán, vé tồn, tỷ lệ lấp đầy % và doanh thu. |
+| **`AdminForm`** | `btnLuu` | `Button` | Xuất bảng tổng hợp doanh thu ra file `output5.txt`. |
 
 ---
 
 ### 🍜 Bai06 — Quản Lý Thực Đơn & Quay Số Chọn Món SQLite
-* **Thao tác:** Bấm **Thêm** để mở `FormNhapLieu` (Thêm Người đóng góp & Món ăn kèm ảnh) ➔ Bấm **Tìm món ăn** để mở `FormKetQua` và nhận gợi ý món ăn ngẫu nhiên.
+> **Thao tác:** Bấm **Thêm** mở `FormNhapLieu` (Thêm Người đóng góp & Món ăn kèm ảnh) ➔ Bấm **Tìm món ăn** mở `FormKetQua` để quay số ngẫu nhiên.
 
 | Form | Control Name | Loại Control | Vai Trò & Truy Vấn CSDL |
 | :--- | :--- | :--- | :--- |
-| **`Bai06`** | `lvDanhSachMonAn` | `ListView` | Hiển thị bảng món ăn từ câu lệnh `SELECT m.IDMA, m.TenMonAn, n.HoVaTen FROM MonAn m LEFT JOIN NguoiDung n ON m.IDNCC = n.IDNCC`. |
+| **`Bai06`** | `lvDanhSachMonAn` | `ListView` | Hiển thị bảng món ăn từ truy vấn `SELECT m.IDMA, m.TenMonAn, n.HoVaTen FROM MonAn m LEFT JOIN NguoiDung n ON m.IDNCC = n.IDNCC`. |
 | **`FormNhapLieu`**| `txtIDNCC`, `txtHoVaTen`, `cboQuyenHan` | `TextBox` / `ComboBox` | Nhập thông tin Người đóng góp ➔ Lưu vào bảng `NguoiDung`. |
-| **`FormNhapLieu`**| `txtIDMA`, `txtTenMonAn`, `cboNguoiDongGop`, `btnChonAnh` | `TextBox` / `Button` | Nhập thông tin Món ăn mới kèm đường dẫn file ảnh ➔ Lưu vào bảng `MonAn`. |
-| **`FormKetQua`** | `lblTenMonAn`, `lblNguoiDongGop`, `picKetQua` | `Label` / `PictureBox` | Hiển thị Món ăn chọn ngẫu nhiên bằng truy vấn `ORDER BY RANDOM() LIMIT 1`. |
+| **`FormNhapLieu`**| `txtIDMA`, `txtTenMonAn`, `cboNguoiDongGop`, `btnChonAnh` | `TextBox` / `Button` | Nhập món ăn mới kèm ảnh ➔ Lưu vào bảng `MonAn`. |
+| **`FormKetQua`** | `lblTenMonAn`, `lblNguoiDongGop`, `picKetQua` | `Label` / `PictureBox` | Hiển thị món ăn chọn ngẫu nhiên bằng câu lệnh `ORDER BY RANDOM() LIMIT 1`. |
 
 ---
 
 ### 📂 Bai07 — Trình Quản Lý Tệp & Thư Mục (File Explorer)
-* **Thao tác:** Nhấp chọn các nhánh trên cây `TreeView` để duyệt thư mục hệ thống. Nhấp chọn các tập tin hình ảnh (`.jpg`, `.png`, `.jpeg`, `.gif`) để xem nội dung trực tiếp trên `PictureBox`.
+> **Thao tác:** Nhấp chọn từng thư mục trên cây `TreeView`. Nhấp chọn file ảnh (`.jpg`, `.png`, `.jpeg`, `.gif`) để xem nội dung trực tiếp trên `PictureBox`.
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
 | :--- | :--- | :--- |
-| `tvFolderBrowser` | `TreeView` | Quét cấu trúc ổ đĩa hệ thống. Áp dụng kỹ thuật **Lazy Loading** (Sử dụng gút giả `"dummy"`) chỉ nạp cây con khi bấm mở rộng nút (`BeforeExpand`). |
-| `picFileContent` | `PictureBox` | Tải và xem trước nội dung tệp tin ảnh khi nhấp chọn nút file (`AfterSelect`). |
+| `tvFolderBrowser` | `TreeView` | Quét ổ đĩa hệ thống với cơ chế **Lazy Loading** (dùng gút giả `"dummy"`) chỉ nạp cây con khi bấm mở rộng (`BeforeExpand`). |
+| `picFileContent` | `PictureBox` | Tự động tải và xem trước nội dung tệp tin ảnh (`AfterSelect`). |
 
 ---
 
-## ⚡ 4. HƯỚNG DẪN CÀI ĐẶT & KHỞI CHẠY
-
-1. **Clone Repository về máy cá nhân:**
-   ```bash
-   git clone https://github.com/thanhnhi8769-ctrl/-NT106.R14-Lab02-25521332.git
-   ```
-
-2. **Mở dự án bằng Visual Studio 2022:**
-   * Khởi động Visual Studio 2022 (Phiên bản 17.0 trở lên).
-   * Chọn **Open a project or solution**.
-   * Trỏ tới thư mục dự án và chọn tệp giải pháp **`Lab02.slnx`**.
-
-3. **Biên dịch & Khởi chạy (Build & Run):**
-   * Nhấn phím `F5` hoặc chọn nút **Start** trên thanh công cụ để trải nghiệm ứng dụng từ màn hình `DashBoard`.
+> [!WARNING]
+> **⚡ HƯỚNG DẪN CÀI ĐẶT & KHỞI CHẠY DỰ ÁN**
+>
+> 1. **Clone Repository về máy cá nhân:**
+>    ```bash
+>    git clone https://github.com/thanhnhi8769-ctrl/-NT106.R14-Lab02-25521332.git
+>    ```
+> 2. **Mở dự án bằng Visual Studio 2022:**
+>    * Khởi động Visual Studio 2022 (phiên bản 17.0 trở lên).
+>    * Chọn **Open a project or solution** ➔ Chọn tệp giải pháp **`Lab02.slnx`**.
+> 3. **Biên dịch & Khởi chạy (Build & Run):**
+>    * Nhấn phím `F5` hoặc chọn nút **Start** trên thanh công cụ để chạy ứng dụng từ màn hình `DashBoard`.
