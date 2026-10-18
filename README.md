@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="tên_file_gif_của_bạn.gif" width="700px" alt="Demo Chibi Cinema">
-</p>
 # 🚀 LAB 02 — WINFORMS & DATA PROCESSING SUITE
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
