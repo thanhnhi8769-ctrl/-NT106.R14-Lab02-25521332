@@ -226,6 +226,15 @@
 ---
 
 ### 🍜 Bai06 — Quản Lý Thực Đơn & Quay Số Chọn Món SQLite
+
+<br>
+<p align="center">
+  <img src="gifforREADME/chibi_monan_full.gif" width="55%" alt="Demo Bài 06">
+  <br><br>
+  <b>Minh họa giao diện Bài 06</b>
+</p>
+<br>
+
 > **Thao tác:** Bấm **Thêm** mở `FormNhapLieu` (Thêm Người đóng góp & Món ăn kèm ảnh) ➔ Bấm **Tìm món ăn** mở `FormKetQua` để quay số ngẫu nhiên.
 
 | Form | Control Name | Loại Control | Vai Trò & Truy Vấn CSDL |
