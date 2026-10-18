@@ -1,6 +1,3 @@
-<p align="center">
-  <img src="./Gemini_Generated_Gif_q1un61q1un61q1un.gif" width="700px" alt="Demo">
-</p>
 # 🚀 LAB 02 — WINFORMS & DATA PROCESSING SUITE
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
