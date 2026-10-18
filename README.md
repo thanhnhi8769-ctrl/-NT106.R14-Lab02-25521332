@@ -92,6 +92,7 @@
 ---
 
 ### 🔍 Bai02 — Phân Tích Thuộc Tính Tệp & Thống Kê Văn Bản
+
 <br>
 <p align="center">
   <img src="gifforREADME/bai2.gif" width="55%" alt="Demo Bài 2">
@@ -99,6 +100,7 @@
   <b>Minh họa giao diện Bài 02</b>
 </p>
 <br>
+
 > **Thao tác:** Bấm **Read File** chọn tệp `.txt` ➔ Hệ thống tự động trích xuất các thuộc tính đường dẫn, dung lượng và chỉ số đếm.
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
@@ -127,6 +129,7 @@
 ---
 
 ### 📋 Bai04 — Quản Lý Sinh Viên JSON & Điều Hướng Phân Trang
+
 <br>
 <p align="center">
   <img src="gifforREADME/chibi-write-file-v2.gif" width="55%" alt="Demo Bài 04">
@@ -134,6 +137,7 @@
   <b>Minh họa giao diện Bài 04</b>
 </p>
 <br>
+
 > **Thao tác:** Nhập dữ liệu bên trái ➔ Bấm **Thêm** ➔ Bấm **Lưu File** để đóng gói JSON ra `input4.txt`. Bấm **Đọc File** để tính ĐTB và xuất `output4.txt`. Bấm **Next** / **Back** để phân trang.
 
 | Control Name | Loại Control | Quy chuẩn Dữ liệu & Ràng buộc (Validation) |
@@ -161,6 +165,7 @@
 
 > [!NOTE]
 > **QUY TRÌNH THAO TÁC CÁC PHÂN HỆ:**
+> 
 <br>
 <table align="center" width="100%">
   <!-- Hàng 1: Chọn Phim & Đặt Vé Rạp Phim -->
