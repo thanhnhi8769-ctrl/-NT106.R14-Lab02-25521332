@@ -117,6 +117,15 @@
 ---
 
 ### 🧮 Bai03 — Thuật Toán Dual-Stack Giải Biểu Thức Toán Học
+
+<br>
+<p align="center">
+  <img src="gifforREADME/chibi-hud.gif" width="55%" alt="Demo Bài 03">
+  <br><br>
+  <b>Minh họa giao diện Bài 03</b>
+</p>
+<br>
+
 > **Thao tác:** Bấm **Đọc File** ➔ Bấm **Tính Toán** để giải ➔ Bấm **Lưu File** để xuất kết quả (Chỉ mở khóa nút lưu khi 100% biểu thức hợp lệ).
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
