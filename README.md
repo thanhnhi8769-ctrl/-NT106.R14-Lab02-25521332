@@ -155,7 +155,7 @@
 <p align="center">
   <img src="gifforREADME/cinema (2).gif" width="55%" alt="Demo Bài 05">
   <br><br>
-  <b>Minh họa giao diện Bài 05</b>
+  <b></b>
 </p>
 <br>
 
