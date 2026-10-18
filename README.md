@@ -158,6 +158,7 @@
   <b>Minh họa giao diện Bài 05</b>
 </p>
 <br>
+
 > [!NOTE]
 > **QUY TRÌNH THAO TÁC CÁC PHÂN HỆ:**
 >
