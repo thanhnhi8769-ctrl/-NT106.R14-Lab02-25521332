@@ -72,6 +72,11 @@
 ---
 
 ### 📝 Bai01 — Đọc, Mã Hóa & Ghi Tập Tin Văn Bản
+<p align="center">
+  <img src="gifforREADME/chibi-doc-file-v5.gif" width="95%" alt="Chibi Doc File Demo">
+  <br>
+  <sub><b>Minh họa chức năng Đọc & Ghi File</b></sub>
+</p>
 > **Thao tác:** Bấm **Đọc File** để nạp `input1.txt` ➔ Sửa nội dung trên khung ➔ Bấm **Ghi File** để chuyển toàn bộ ký tự sang IN HOA và lưu ra `output1.txt`.
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
