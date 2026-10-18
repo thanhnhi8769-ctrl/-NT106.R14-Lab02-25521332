@@ -82,7 +82,7 @@
 
 > **Thao tác:** Bấm **Đọc File** để nạp `input1.txt` → Sửa nội dung trên khung → Bấm **Ghi File** để chuyển toàn bộ ký tự sang IN HOA và lưu ra `output1.txt`.
 
-<br>
+
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
 | :--- | :--- | :--- |
 | `rtbNoiDung` | `RichTextBox` | Hiển thị nội dung đọc được hoặc nhận văn bản nhập từ bàn phím. |
