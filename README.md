@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="tên_file_gif_của_bạn.gif" width="700px" alt="Demo Chibi Cinema">
+  <img src="./Gemini_Generated_Gif_q1un61q1un61q1un.gif" width="700px" alt="Demo">
 </p>
 # 🚀 LAB 02 — WINFORMS & DATA PROCESSING SUITE
 
