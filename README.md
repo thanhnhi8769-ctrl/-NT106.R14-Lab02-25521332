@@ -50,9 +50,18 @@
 ## 📖 BẢNG TRA CỨU CHI TIẾT CONTROL & HƯỚNG DẪN THAO TÁC CÁC FORM
 
 ### 🎛️ DashBoard — Màn Hình Điều Hướng Trung Tâm
-<p align="center">
-  <img src="./chibi_lab02_dashboard_slow.gif" width="700px" alt="Demo">
-</p>
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="./gifforREADME/chibi_lab02_dashboard_slow.gif" width="100%" alt="Dashboard Demo"><br>
+      <sub><b>Giao diện Dashboard</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="./gifforREADME/chibi_lab02_slow.gif" width="100%" alt="Animation Demo"><br>
+      <sub><b>Thao tác Chibi High-Tech</b></sub>
+    </td>
+  </tr>
+</table>
 > **Thao tác:** Nhấp chuột vào các nút từ `Bài 1` đến `Bài 7` trên Menu để truy cập trực tiếp Form chức năng.
 
 ---
