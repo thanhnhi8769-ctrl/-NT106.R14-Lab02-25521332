@@ -161,7 +161,38 @@
 
 > [!NOTE]
 > **QUY TRÌNH THAO TÁC CÁC PHÂN HỆ:**
->
+<br>
+<table align="center" width="100%">
+  <!-- Hàng 1: Chọn Phim & Đặt Vé Rạp Phim -->
+  <tr>
+    <td align="center" width="50%">
+      <img src="gifforREADME/chibi-chon-phim.webp" width="100%" alt="Chọn Phim">
+      <br>
+      <sub><b>1. Giao diện Chọn Phim</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="gifforREADME/chibi_cinema.gif" width="100%" alt="Đặt Vé Cinema">
+      <br>
+      <sub><b>2. Giao diện Chọn Ghế & Đặt Vé</b></sub>
+    </td>
+  </tr>
+  <!-- Hàng 2: Xác thực Password & Báo cáo Thống kê -->
+  <tr>
+    <td align="center" width="50%">
+      <img src="gifforREADME/chibi_password.gif" width="100%" alt="Xác Thực Mật Khẩu">
+      <br>
+      <sub><b>3. Form Xác Thực Mật Khẩu Admin</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="gifforREADME/chibi_thongke.gif" width="100%" alt="Báo Cáo Thống Kê">
+      <br>
+      <sub><b>4. Báo Cáo Thống Kê LINQ</b></sub>
+    </td>
+  </tr>
+</table>
+<br>
+
+
 > 1. **Khách đặt vé:** Nhập tên vào `Customer Name` ➔ Click chọn Poster phim ➔ Mở Form `BookingForm` ➔ Chọn phòng chiếu ➔ Click chọn ghế ➔ Bấm **Thanh toán**.
 > 2. **Chế độ Quản trị:** Tại góc dưới cùng bên phải Form chọn phim, bấm trực tiếp vào link **`⚙ Quản lý hệ thống`** ➔ Mở Form `PasswordForm` ➔ Nhập mật khẩu `admin123` ➔ Mở Form `AdminForm` ➔ Bấm **Thống kê** xem báo cáo LINQ ➔ Bấm **Lưu** xuất `output5.txt`.
 
