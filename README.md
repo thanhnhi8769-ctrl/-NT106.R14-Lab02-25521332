@@ -127,6 +127,13 @@
 ---
 
 ### 📋 Bai04 — Quản Lý Sinh Viên JSON & Điều Hướng Phân Trang
+<br>
+<p align="center">
+  <img src="gifforREADME/chibi-write-file-v2.gif" width="55%" alt="Demo Bài 04">
+  <br><br>
+  <b>Minh họa giao diện Bài 04</b>
+</p>
+<br>
 > **Thao tác:** Nhập dữ liệu bên trái ➔ Bấm **Thêm** ➔ Bấm **Lưu File** để đóng gói JSON ra `input4.txt`. Bấm **Đọc File** để tính ĐTB và xuất `output4.txt`. Bấm **Next** / **Back** để phân trang.
 
 | Control Name | Loại Control | Quy chuẩn Dữ liệu & Ràng buộc (Validation) |
@@ -144,6 +151,13 @@
 
 ### 🎟️ Bai05 — Hệ Thống Đặt Vé Rạp Phim & Báo Cáo Doanh Thu LINQ
 
+<br>
+<p align="center">
+  <img src="gifforREADME/cinema (2).gif" width="55%" alt="Demo Bài 05">
+  <br><br>
+  <b>Minh họa giao diện Bài 05</b>
+</p>
+<br>
 > [!NOTE]
 > **QUY TRÌNH THAO TÁC CÁC PHÂN HỆ:**
 >
