@@ -61,7 +61,7 @@
     <td align="center" width="50%">
       <img src="gifforREADME/chibi_lab02_dashboard_slow.gif" width="100%" alt="Dashboard Demo">
       <br>
-      <sub><b>Thao tác Chibi High-Tech</b></sub>
+      <sub><b>Thao tác </b></sub>
     </td>
   </tr>
 </table>
@@ -76,7 +76,7 @@
 <p align="center">
   <img src="gifforREADME/chibi-doc-file-v5.gif" width="55%" alt="Chibi Doc File Demo">
   <br><br>
-  <b>Minh họa chức năng Đọc & Ghi File</b>
+  <b>Minh họa giao diện Bài 1</b>
 </p>
 <br>
 
@@ -92,6 +92,13 @@
 ---
 
 ### 🔍 Bai02 — Phân Tích Thuộc Tính Tệp & Thống Kê Văn Bản
+<br>
+<p align="center">
+  <img src="gifforREADME/bai2.gif" width="55%" alt="Demo Bài 2">
+  <br><br>
+  <b>Minh họa giao diện Bài 02</b>
+</p>
+<br>
 > **Thao tác:** Bấm **Read File** chọn tệp `.txt` ➔ Hệ thống tự động trích xuất các thuộc tính đường dẫn, dung lượng và chỉ số đếm.
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
