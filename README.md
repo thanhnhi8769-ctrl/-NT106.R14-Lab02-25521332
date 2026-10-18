@@ -229,6 +229,15 @@
 ---
 
 ### 📂 Bai07 — Trình Quản Lý Tệp & Thư Mục (File Explorer)
+
+<br>
+<p align="center">
+  <img src="gifforREADME/chibi_cay_thumuc.gif" width="55%" alt="Demo Bài 07">
+  <br><br>
+  <b>Minh họa giao diện Bài 07 (File Explorer)</b>
+</p>
+<br>
+
 > **Thao tác:** Nhấp chọn từng thư mục trên cây `TreeView`. Nhấp chọn file ảnh (`.jpg`, `.png`, `.jpeg`, `.gif`) để xem nội dung trực tiếp trên `PictureBox`.
 
 | Control Name | Loại Control | Chức năng & Xử lý Kỹ thuật |
